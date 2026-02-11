@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-romantic-900: #1a0b1a;
+  --color-romantic-800: #2d142d;
+  --color-romantic-700: #4a1a4a;
+  --color-romantic-600: #7c2d7c;
+  --color-romantic-500: #b347b3;
+  --color-romantic-400: #e066e0;
+  --color-romantic-300: #f0a3f0;
+  --color-romantic-200: #f5d0f5;
+  --color-romantic-100: #fae6fa;
+
+  --color-gold: #d4af37;
+
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Poppins", sans-serif;
+}
+
+/* RESET PROPRE */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* SCROLL FLUIDE + PERFORMANCE */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+
+body {
+  color: white;
+  background: linear-gradient(to bottom, #1a0b1a, #2d142d);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+/* SCROLLBAR PREMIUM */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a0b1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #b347b3, #d4af37);
+  border-radius: 4px;
+}
+
+/* GLASS EFFECT */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* TEXT GRADIENT */
+.text-gradient {
+  background: linear-gradient(135deg, #f0a3f0 0%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* GLOW EFFECT */
+.glow-text {
+  text-shadow:
+    0 0 10px rgba(240, 163, 240, 0.5),
+    0 0 20px rgba(240, 163, 240, 0.3);
+}
+
+.glow-box {
+  box-shadow:
+    0 0 20px rgba(179, 71, 179, 0.3),
+    0 0 40px rgba(179, 71, 179, 0.2);
+}
+
+/* TRANSITIONS GLOBALES (rend tout plus fluide) */
+button,
+a,
+.card,
+.glass {
+  transition: all 0.3s ease;
+}
+
+/* HOVER PLUS DOUX */
+button:hover,
+a:hover {
+  transform: translateY(-3px);
+}
+
+/* ANIMATION LÉGÈRE POUR FOND (effet vivant subtil) */
+@keyframes backgroundMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  background-size: 200% 200%;
+  animation: backgroundMove 15s ease infinite;
+}
+
+/* APPARITION DOUCE DES SECTIONS */
+.section-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SÉLECTION TEXTE PERSONNALISÉE */
+::selection {
+  background: #b347b3;
+  color: white;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
