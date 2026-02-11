@@ -72,7 +72,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg text-romantic-200 max-w-2xl mx-auto mb-10"
         >
-          Ce site est une déclaration d'amour numérique, créée rien que pour toi Percy ❤️.
+          Ce site est une déclaration d'amour numérique à l'ocassion de Saint-Valentin, créée rien que pour toi Percy ❤️.
           <br /><br />
           <span className="text-gold">👆 Explore et découvre chaque surprise</span>
         </motion.p>

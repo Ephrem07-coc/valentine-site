@@ -178,6 +178,7 @@ export default function SecretPage() {
                     Si tu lis ces lignes, c'est que tu as trouvé le code. 
                     Mais le vrai code, c'est celui que ton cœur a déchiffré depuis le premier jour.
                     Je veux réîtérer à quel point je t'aime, tu es tellement important pour moi, me laisse jamais tomber stp
+                    JOYEUSE SAINT-VALENTIN bb
                     <br /><br />
                     <span className="text-gold font-display text-3xl">
                       Je t'aime. Pour toujours.
