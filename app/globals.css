@@ -1,7 +1,9 @@
+/* ================= GOOGLE FONTS ================= */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
 
 @import "tailwindcss";
 
+/* ================= THEME ================= */
 @theme {
   --color-romantic-900: #1a0b1a;
   --color-romantic-800: #2d142d;
@@ -17,55 +19,97 @@
 
   --font-display: "Playfair Display", serif;
   --font-sans: "Poppins", sans-serif;
+  --font-georgia: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* RESET PROPRE */
+/* ================= RESET & BODY ================= */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-/* SCROLL FLUIDE + PERFORMANCE */
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
-
 body {
   color: white;
-  background: linear-gradient(to bottom, #1a0b1a, #2d142d);
   font-family: var(--font-sans);
   min-height: 100vh;
   overflow-x: hidden;
+  background: linear-gradient(-45deg, #0a050a, #1a0b1a, #2d142d);
+  background-size: 300% 300%;
+  animation: backgroundMove 18s ease infinite;
+}
+
+@keyframes backgroundMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================= LETTRE ================= */
+
+.letter-text {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  line-height: 2.1;
+  letter-spacing: 0.4px;
+  color: #f8e9ff;
+  text-shadow: 0 0 12px rgba(212,175,55,0.15);
+  opacity: 1;
+  transform: none;
+}
+
+/* Curseur unique et propre */
+.writing-cursor-georgia {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: var(--color-gold);
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Signature */
+.font-signature {
+  font-family: cursive;
+  letter-spacing: 1px;
+}
+
+.romantic-letter-container {
+  position: relative;
+  z-index: 1;
+}
+
+.romantic-letter-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(212,175,55,0.07), transparent 60%);
+  pointer-events: none;
+  z-index: -1; /* IMPORTANT */
 }
 
 
-/* SCROLLBAR PREMIUM */
-::-webkit-scrollbar {
-  width: 8px;
-}
+/* ================= EFFETS ================= */
 
-::-webkit-scrollbar-track {
-  background: #1a0b1a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #b347b3, #d4af37);
-  border-radius: 4px;
-}
-
-/* GLASS EFFECT */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
 }
 
-/* TEXT GRADIENT */
 .text-gradient {
   background: linear-gradient(135deg, #f0a3f0 0%, #d4af37 100%);
   -webkit-background-clip: text;
@@ -73,73 +117,16 @@ body {
   background-clip: text;
 }
 
-/* GLOW EFFECT */
-.glow-text {
-  text-shadow:
-    0 0 10px rgba(240, 163, 240, 0.5),
-    0 0 20px rgba(240, 163, 240, 0.3);
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-.glow-box {
-  box-shadow:
-    0 0 20px rgba(179, 71, 179, 0.3),
-    0 0 40px rgba(179, 71, 179, 0.2);
+::-webkit-scrollbar-track {
+  background: #0a050a;
 }
 
-/* TRANSITIONS GLOBALES (rend tout plus fluide) */
-button,
-a,
-.card,
-.glass {
-  transition: all 0.3s ease;
-}
-
-/* HOVER PLUS DOUX */
-button:hover,
-a:hover {
-  transform: translateY(-3px);
-}
-
-/* ANIMATION LÉGÈRE POUR FOND (effet vivant subtil) */
-@keyframes backgroundMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-body {
-  background-size: 200% 200%;
-  animation: backgroundMove 15s ease infinite;
-}
-
-/* APPARITION DOUCE DES SECTIONS */
-.section-hidden {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.section-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* SÉLECTION TEXTE PERSONNALISÉE */
-::selection {
-  background: #b347b3;
-  color: white;
-}
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 10px;
 }
